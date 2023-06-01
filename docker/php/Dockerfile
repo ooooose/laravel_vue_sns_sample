@@ -12,10 +12,7 @@ COPY --from=node:10.22 /usr/local/lib /usr/local/lib
 
 RUN apt-get update && \
     apt-get -y install \
-    git \
-    zip \
-    unzip \
-    vim \
-    && docker-php-ext-install pdo_mysql bcmath
+    git unzip libzip-dev libicu-dev libonig-dev vim && \
+    docker-php-ext-install intl pdo_mysql zip bcmath
 
-WORKDIR /var/www/html
+WORKDIR /app

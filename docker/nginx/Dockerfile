@@ -1,8 +1,5 @@
-FROM nginx:1.19-alpine
+FROM nginx:1.20-alpine
 
-ENV TZ=UTC
+ENV TZ Asia/Tokyo
 
-# nginx config file
-COPY ./docker/nginx/*.conf /etc/nginx/conf.d/
-
-WORKDIR /var/www/html
+COPY ./docker/nginx/default.conf /etc/nginx/conf.d/default.conf
