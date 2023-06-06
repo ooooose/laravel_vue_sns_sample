@@ -19,7 +19,7 @@ services:
       - ./src:/app
     working_dir: /var/www
   db:
-    platform: 'linux/arm64/v8'
+    platform: 'linux/arm64'
     build:
       context: .
       dockerfile: ./docker/mysql/Dockerfile
@@ -33,16 +33,16 @@ services:
       TZ: 'Asia/Tokyo'
     volumes:
       - mysql-volume:/var/lib/mysql
-  mail:
-    image: mailhog/mailhog
-    container_name: mailhog
-    ports:
-     - "8025:8025"
-    environment:
-      MH_STORAGE: maildir
-      MH_MAILDIR_PATH: /tmp
-    volumes:
-      - maildir:/tmp
+  # mail:
+  #   image: mailhog/mailhog
+  #   container_name: mailhog
+  #   ports:
+  #     - "8025:8025"
+  #   environment:
+  #     MH_STORAGE: maildir
+  #     MH_MAILDIR_PATH: /tmp
+  #   volumes:
+  #     - maildir:/tmp
 volumes:
   mysql-volume:
-  maildir: {}
+  # maildir: {}
