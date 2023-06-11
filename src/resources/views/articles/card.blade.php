@@ -80,7 +80,7 @@
       <div class='cardtext line-height'>
     @endif
       <a href="" class='border p-1 mr-1 text-muted'>
-        {{ $tag->name }}
+        {{ $tag->hashtag }}
       </a>
     @if($loop->last)
       </div>
