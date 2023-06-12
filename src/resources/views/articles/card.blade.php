@@ -79,8 +79,8 @@
     <div class='card-body pt-0 pb-4 pl-3'>
       <div class='cardtext line-height'>
     @endif
-      <a href="" class='border p-1 mr-1 text-muted'>
-        {{ $tag->name }}
+      <a href="{{ route('tags.show', ['name' => $tag->name]) }}" class='border p-1 mr-1 text-muted'>
+        {{ $tag->hashtag }}
       </a>
     @if($loop->last)
       </div>
